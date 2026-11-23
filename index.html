@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f3d2e" />
+  <meta name="description" content="鲜知 FreshSense 1.0→2.0→3.0 迭代设计全链路展示：从用户原声到方案落地，讲清每一次界面变化背后的思考。" />
+  <title>鲜知进化论｜FreshSense 1.0 → 2.0 → 3.0 迭代全链路</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="回到顶部">
+      <span class="brand-mark" aria-hidden="true">鲜</span>
+      <span class="brand-name">鲜知进化论<small>FreshSense Evolution Archive</small></span>
+    </a>
+    <nav class="site-nav" aria-label="章节导航">
+      <a href="#prologue">序章</a>
+      <a href="#v1">1.0</a>
+      <a href="#v2">2.0</a>
+      <a href="#v3">3.0</a>
+      <a href="#method">设计推导</a>
+      <a href="#future">下一站</a>
+    </nav>
+    <a class="header-cta" href="https://tartalr818339.github.io/fridge3.0/" target="_blank" rel="noopener">体验 3.0 ↗</a>
+  </header>
+
+  <main id="top">
+    <!-- 序章 -->
+    <section class="hero" id="prologue">
+      <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <p class="kicker"><span class="dot"></span> 一个关于「少浪费一点」的设计故事</p>
+          <h1>冰箱很冷，<br />但设计可以<span class="underline">很暖</span>。</h1>
+          <p class="hero-lead">从 1.0 的功能堆叠，到 2.0 的结构整理，再到 3.0 的行动引导。<br />三次迭代，回答同一个问题：用户到底卡在哪一步？</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#v1">翻开第一页 ↓</a>
+            <a class="btn btn-ghost" href="#lab">先看版本实验台</a>
+          </div>
+          <div class="hero-meta">
+            <span>7 位典型用户</span><span>4 项任务观察</span><span>5 处核心优化</span><span>3 个版本</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal reveal-delay">
+          <div class="cover-card">
+            <div class="cover-top">
+              <span class="cover-chip">ARCHIVE 01—03</span>
+              <span class="cover-chip">FRESH / SENSE</span>
+            </div>
+            <div class="cover-title">
+              <span>鲜知</span>
+              <small>三次进化档案</small>
+            </div>
+            <div class="shot shot-cover" role="img" aria-label="图片占位：三个版本 App 界面合影">
+              <span class="shot-label">图片占位</span>
+              <span class="shot-name">三个版本界面合影</span>
+            </div>
+            <div class="cover-foot">
+              <span>1.0 功能上线</span><span>2.0 结构重整</span><span>3.0 行动引导</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">SCROLL TO UNFOLD <span>↓</span></div>
+    </section>
+
+    <!-- 三版本速览 -->
+    <section class="section overview" id="overview">
+      <div class="section-head reveal">
+        <p class="eyebrow">00 / 三分钟看完三次迭代</p>
+        <h2>先给你一张地图</h2>
+        <p class="section-lead">如果你很赶时间，记住这三句话就够了。</p>
+      </div>
+      <div class="version-grid">
+        <article class="version-card reveal">
+          <div class="version-no">1.0</div>
+          <p class="version-tag">P0 原型 · 功能先上线</p>
+          <h3>把「能做」先做出来</h3>
+          <p>NFC 结果、首页、食谱、补货、设备都在。能和冰箱屏同源读取食材状态，但入口散、信息密，用户得自己找路。</p>
+          <div class="chip-row"><span>NFC 结果</span><span>首页</span><span>食谱</span><span>补货</span><span>设备</span></div>
+          <a class="text-link" href="https://tartalr818339.github.io/fridge/" target="_blank" rel="noopener">打开 1.0 原型 ↗</a>
+        </article>
+        <article class="version-card reveal reveal-delay">
+          <div class="version-no">2.0</div>
+          <p class="version-tag">结构重整 · 体验开始被追问</p>
+          <h3>把功能，整理成场景</h3>
+          <p>底部导航收敛为四个入口，中央加入「＋添加」，新增冷冻室和冰箱型号切换。结构清楚了，但语言还是团队语言。</p>
+          <div class="chip-row"><span>底部四入口</span><span>中央添加</span><span>冰箱型号</span><span>临期窗口</span></div>
+          <a class="text-link" href="https://tartalr818339.github.io/fridge2.0/" target="_blank" rel="noopener">打开 2.0 原型 ↗</a>
+        </article>
+        <article class="version-card reveal reveal-delay-2">
+          <div class="version-no">3.0</div>
+          <p class="version-tag">行动导向 · 设计开始说人话</p>
+          <h3>不只提醒，还告诉你怎么做</h3>
+          <p>新手教程、模块切换、文案直白化、分级预警、「⏰ 优先吃」行动标签，让每一步都更接近真实用户的判断方式。</p>
+          <div class="chip-row"><span>教程</span><span>模块切换</span><span>优先吃</span><span>每日提醒</span></div>
+          <a class="text-link" href="https://tartalr818339.github.io/fridge3.0/" target="_blank" rel="noopener">打开 3.0 原型 ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 版本实验台 -->
+    <section class="section lab" id="lab">
+      <div class="section-head reveal">
+        <p class="eyebrow">版本实验台 / LIVE COMPARE</p>
+        <h2>三台冰箱，摆在一起看</h2>
+        <p class="section-lead">点击版本按钮，切换真实原型里的关键文案与入口。</p>
+      </div>
+      <div class="lab-shell reveal">
+        <div class="lab-tabs" role="tablist" aria-label="版本切换">
+          <button class="lab-tab active" role="tab" aria-selected="true" data-lab="v1">1.0 <small>功能都在</small></button>
+          <button class="lab-tab" role="tab" aria-selected="false" data-lab="v2">2.0 <small>结构重整</small></button>
+          <button class="lab-tab" role="tab" aria-selected="false" data-lab="v3">3.0 <small>行动引导</small></button>
+        </div>
+        <div class="lab-body">
+          <div class="lab-phone">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen" id="labScreen">
+              <div class="phone-topbar">页面预览</div>
+              <div class="phone-content">
+                <h4 id="labTitle">鲜知 FreshSense · 手机 App</h4>
+                <p id="labSubtitle">顶部外置入口：NFC 结果 / 首页 / 食谱 / 补货 / 设备 / 重置演示</p>
+                <div class="phone-lines" id="labLines"></div>
+              </div>
+              <div class="phone-tabbar" id="labTabbar"></div>
+            </div>
+          </div>
+          <div class="lab-notes">
+            <p class="lab-notes-kicker" id="labKicker">01 / 功能先上线</p>
+            <h3 id="labHeading">能做的事很多，但用户要自己找</h3>
+            <p id="labText">1.0 已经把冰箱屏数据、NFC 碰一碰、食谱、补货、设备连接串起来了。顶部还有一排外置预览按钮，功能地图很满；代价是首屏没有明确告诉用户「先做什么」。</p>
+            <div class="lab-fact" id="labFact"><b>原型证据</b>　外置入口：NFC 结果 / 首页 / 食谱 / 补货 / 设备 / 重置演示</div>
+            <div class="shot shot-small" role="img" aria-label="图片占位：当前版本界面截图">
+              <span class="shot-label">图片占位</span>
+              <span class="shot-name">当前版本界面截图</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1.0 -->
+    <section class="chapter chapter-dark" id="v1">
+      <div class="chapter-bg-word" aria-hidden="true">01</div>
+      <div class="chapter-inner">
+        <div class="chapter-marker reveal"><span>CHAPTER 01</span><span>起点 / 功能上线</span></div>
+        <div class="chapter-grid">
+          <div class="chapter-copy reveal">
+            <p class="eyebrow eyebrow-light">1.0：先把能力装进冰箱</p>
+            <h2>我们做了很多，<br />却没有替用户做决定。</h2>
+            <p class="chapter-lead">1.0 的重点是「连通」：冰箱屏给出同源数据，App 读取剩余天数与新鲜度；碰一碰能拉起结果页；首页、食谱、补货、设备四个 Tab 构成基本骨架。</p>
+            <div class="story-list">
+              <div class="story-item"><span class="story-icon">◎</span><div><b>同源数据</b><p>剩余天数与新鲜度由屏幕端统一给出，App 端只读取、不重算。</p></div></div>
+              <div class="story-item"><span class="story-icon">◫</span><div><b>四个底部入口</b><p>首页 / 食谱 / 补货 / 设备；NFC 结果作为独立页面存在。</p></div></div>
+              <div class="story-item"><span class="story-icon">＋</span><div><b>录入与补货闭环</b><p>手动、语音、拍照小票识别；补货清单与商品浏览、下单入库相连。</p></div></div>
+            </div>
+            <div class="thought-note">
+              <span>当时我们以为</span>
+              <p>功能齐全 = 用户会用。</p>
+              <span class="note-divider"></span>
+              <span>后来发现</span>
+              <p>入口散、术语多，用户要先学会这套系统。</p>
+            </div>
+          </div>
+          <div class="chapter-media reveal reveal-delay">
+            <div class="shot shot-tall" role="img" aria-label="图片占位：1.0 首页与 NFC 结果页">
+              <span class="shot-label">图片占位</span>
+              <span class="shot-name">1.0 首页 / NFC 结果页</span>
+              <span class="shot-hint">建议放真实原型截图</span>
+            </div>
+            <div class="caption-card">
+              <b>原型里的真实文案</b>
+              <p>「碰一碰成功 · 数据来自冰箱食材库」<br />「早上好，今天也要新鲜 🍃」</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.0 -->
+    <section class="chapter" id="v2">
+      <div class="chapter-inner">
+        <div class="chapter-marker reveal"><span>CHAPTER 02</span><span>拆解 / 结构重整</span></div>
+        <div class="chapter-grid chapter-grid-reverse">
+          <div class="chapter-copy reveal">
+            <p class="eyebrow">2.0：把迷宫整理成房间</p>
+            <h2>入口好找了，<br />话却还没说清楚。</h2>
+            <p class="chapter-lead">2.0 做了大量「结构性正确」的事：底部导航收敛，中央突出「＋添加」，冰箱增加冷冻室，并允许按型号切换分区。临期信息也第一次按时间窗口拆开。</p>
+            <div class="upgrade-flow">
+              <div><span>01</span><b>导航收束</b><p>首页 / 食谱 / ＋添加 / 补货 / 我的</p></div>
+              <div><span>02</span><b>分区扩容</b><p>四层冷藏果蔬 → 加入冷冻室，共 5 分区</p></div>
+              <div><span>03</span><b>临期分层</b><p>已过期 / 1天内 / 2天内 / 3天内</p></div>
+              <div><span>04</span><b>录入提速</b><p>拍照 / 手动 / 一句话，支持批量与语音</p></div>
+            </div>
+            <div class="quote-inline reveal">
+              <span class="quote-mark">“</span>
+              <p>2.0 解决的是「东西在哪里」，还没有解决「这句话是什么意思、我下一步该干什么」。</p>
+            </div>
+          </div>
+          <div class="chapter-media reveal reveal-delay">
+            <div class="shot shot-tall" role="img" aria-label="图片占位：2.0 界面问题标注图">
+              <span class="shot-label">图片占位</span>
+              <span class="shot-name">2.0 界面问题标注图</span>
+              <span class="shot-hint">圈出入口、文案、信息分组问题</span>
+            </div>
+            <div class="mini-shots">
+              <div class="shot shot-mini" role="img" aria-label="图片占位：2.0 冰箱型号切换模块"><span class="shot-label">图片占位</span><span class="shot-name">型号切换模块</span></div>
+              <div class="shot shot-mini" role="img" aria-label="图片占位：2.0 添加食材弹窗"><span class="shot-label">图片占位</span><span class="shot-name">添加食材弹窗</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 用户研究 -->
+    <section class="section research" id="research">
+      <div class="section-head reveal">
+        <p class="eyebrow">MODULE 01 / 迭代起点</p>
+        <h2>所有修改，都从真实用户声音出发</h2>
+        <p class="section-lead">迭代不从「我觉得更好看」出发。我们把模糊抱怨，翻译成可以动手的设计问题。</p>
+      </div>
+
+      <div class="research-layout">
+        <div class="research-left reveal">
+          <div class="shot shot-wide" role="img" aria-label="图片占位：用户访谈记录与测试过程截图">
+            <span class="shot-label">图片占位</span>
+            <span class="shot-name">用户访谈记录 / 测试过程截图</span>
+          </div>
+          <div class="research-meta">
+            <div><b>7 位</b><span>典型用户</span></div>
+            <div><b>4 项</b><span>任务式观察</span></div>
+            <div><b>3 类</b><span>共性痛点</span></div>
+          </div>
+          <div class="persona-row" aria-label="用户类型：学生、独居青年、家庭使用者">
+            <span>学生</span><span>独居青年</span><span>家庭使用者</span>
+          </div>
+          <div class="task-list">
+            <b>测试任务</b>
+            <ol><li>录入新食材</li><li>查找临期食材</li><li>确认冷冻库存</li><li>切换冰箱类型</li></ol>
+          </div>
+        </div>
+        <div class="research-right reveal reveal-delay">
+          <p class="mini-title">用户原声金句摘录</p>
+          <div class="quote-card quote-a">
+            <span class="quote-index">VOICE 01</span>
+            <p>“那个‘2 急’我愣了一下，没反应过来啥意思。”</p>
+            <small>→ 内部黑话，理解成本高</small>
+          </div>
+          <div class="quote-card quote-b">
+            <span class="quote-index">VOICE 02</span>
+            <p>“更换冰箱型号我找了很久，以为只是一行说明。”</p>
+            <small>→ 可交互入口缺少意符</small>
+          </div>
+          <div class="quote-card quote-c">
+            <span class="quote-index">VOICE 03</span>
+            <p>“看到 8 件快到期，但不知道到底有多急。”</p>
+            <small>→ 有信息，没有优先级</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="pain-grid reveal">
+        <article class="pain-card"><span>01</span><h3>入口找不到</h3><p>超半数用户首次使用，找不到切换冰箱、添加食材的入口。</p></article>
+        <article class="pain-card"><span>02</span><h3>信息看不懂</h3><p>「2 急」等团队内部简化表述，属于设计黑话，用户理解成本高。</p></article>
+        <article class="pain-card"><span>03</span><h3>决策犹豫</h3><p>只告知食材状态，不给出行动方向，用户看完仍不知道怎么做。</p></article>
+      </div>
+
+      <div class="translation reveal">
+        <div class="translation-head">
+          <p class="eyebrow">MODULE 02 / 问题拆解</p>
+          <h3>把「用户抱怨」翻译成「设计问题」</h3>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>用户真实感受</th><th>对应的设计问题</th><th>涉及的设计原则</th></tr></thead>
+            <tbody>
+              <tr><td>“以为这行只是说明文字，不知道能点”</td><td>可交互元素缺少视觉暗示，「意符」不明确</td><td>反馈与可供性 · 意符</td></tr>
+              <tr><td>“‘2 急’是什么意思？得点进去才懂”</td><td>使用团队内部黑话，不符合用户日常语言</td><td>尼尔森 10 条 · 贴近真实世界</td></tr>
+              <tr><td>“8 件快到期，但得一条条数才知道有多急”</td><td>信息平铺无分组，用户需自行加工判断</td><td>格式塔原则 · 分组 + 认知负荷</td></tr>
+              <tr><td>“字太多，打开半天抓不住重点”</td><td>信息冗余，核心数据被无效文字稀释</td><td>认知负荷 · 信息精简 + 简洁设计</td></tr>
+              <tr><td>“知道快过期，但还是拖着忘了吃”</td><td>只有状态告知，无行动引导，无法转化为行为</td><td>尼尔森 10 条 · 系统状态可见（缺失行动层）</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 设计锚点 -->
+    <section class="section anchors" id="anchors">
+      <div class="section-head reveal">
+        <p class="eyebrow">MODULE 03 / 设计锚点</p>
+        <h2>先定判断标准，再动手改界面</h2>
+        <p class="section-lead">避免「凭感觉改图」。每一处优化，都必须能回答：它符合哪条原则？</p>
+      </div>
+      <div class="anchor-grid">
+        <article class="anchor-card reveal"><span class="anchor-num">01</span><div class="anchor-icon">言</div><h3>贴近真实世界</h3><p class="anchor-en">尼尔森 10 条</p><p>不说内部黑话，只说用户日常听得懂的大白话。</p></article>
+        <article class="anchor-card reveal reveal-delay"><span class="anchor-num">02</span><div class="anchor-icon">少</div><h3>认知负荷最小化</h3><p class="anchor-en">认知负荷</p><p>减少需要记忆、计算、二次加工的信息；能直接给结论就不给过程。</p></article>
+        <article class="anchor-card reveal reveal-delay-2"><span class="anchor-num">03</span><div class="anchor-icon">点</div><h3>反馈与可供性</h3><p class="anchor-en">意符 / 反馈</p><p>能点击的元素，要长得「像能点的」；操作后要有明确的视觉回应。</p></article>
+        <article class="anchor-card reveal"><span class="anchor-num">04</span><div class="anchor-icon">组</div><h3>格式塔分组原则</h3><p class="anchor-en">Gestalt</p><p>同类信息视觉归组，用层级区分优先级，帮用户眼睛自动分类。</p></article>
+      </div>
+      <div class="shot shot-strip reveal" role="img" aria-label="图片占位：四个设计原则的简约图形符号">
+        <span class="shot-label">图片占位</span>
+        <span class="shot-name">四个设计原则对应简约图形符号（可选）</span>
+      </div>
+    </section>
+
+    <!-- 3.0 落地 -->
+    <section class="chapter chapter-green" id="v3">
+      <div class="chapter-inner">
+        <div class="chapter-marker chapter-marker-light reveal"><span>CHAPTER 03</span><span>落地 / 五处核心优化</span></div>
+        <div class="chapter-title-block reveal">
+          <p class="eyebrow eyebrow-light">3.0：把思考写进每一个像素</p>
+          <h2>每一处修改，都有完整推导链路。</h2>
+          <p class="chapter-lead">用户原声 → 问题诊断 → 原则支撑 → 优化方案 → 价值沉淀。不是「改好看一点」，而是让每一次变化都能被解释。</p>
+        </div>
+
+        <div class="fix-list">
+          <article class="fix-card reveal">
+            <div class="fix-head"><span class="fix-no">01</span><div><h3>分区文案直白化</h3><p>不说黑话，说人话</p></div><span class="fix-principle">贴近真实世界</span></div>
+            <div class="fix-chain"><span>用户原声</span><b>“‘2 急’我愣了一下，没反应过来啥意思”</b><span>问题诊断</span><b>内部简化表述，新用户零认知</b><span>原则支撑</span><b>尼尔森 10 条</b></div>
+            <div class="compare">
+              <div class="compare-side before"><small>2.0 · 改前</small><div class="mock-label">2 急</div><div class="shot shot-compare" role="img" aria-label="图片占位：2.0 分区文案"><span class="shot-label">图片占位</span><span class="shot-name">2.0 分区文案</span></div></div>
+              <div class="compare-arrow" aria-hidden="true">→</div>
+              <div class="compare-side after"><small>3.0 · 改后</small><div class="mock-label good">2 件即将过期</div><div class="shot shot-compare" role="img" aria-label="图片占位：3.0 分区文案"><span class="shot-label">图片占位</span><span class="shot-name">3.0 分区文案</span></div></div>
+            </div>
+            <p class="fix-value"><b>优化价值</b>　零理解成本，不用猜、不用点进去验证。</p>
+          </article>
+
+          <article class="fix-card reveal">
+            <div class="fix-head"><span class="fix-no">02</span><div><h3>冰箱切换入口显性化</h3><p>让能点的地方，看起来真的能点</p></div><span class="fix-principle">反馈与可供性 · 意符</span></div>
+            <div class="fix-chain"><span>用户原声</span><b>“更换冰箱型号我找了很久，以为只是一行说明”</b><span>问题诊断</span><b>入口无意符，功能发现率极低</b><span>原则支撑</span><b>反馈与可供性</b></div>
+            <div class="compare">
+              <div class="compare-side before"><small>2.0 · 改前</small><div class="mock-label muted-label">🧊 常规双门 · 5 分区 <i>更换 / 拍照识别 ›</i></div><div class="shot shot-compare" role="img" aria-label="图片占位：2.0 冰箱切换模块"><span class="shot-label">图片占位</span><span class="shot-name">2.0 型号切换模块</span></div></div>
+              <div class="compare-arrow" aria-hidden="true">→</div>
+              <div class="compare-side after"><small>3.0 · 改后</small><div class="mock-label good">切换冰箱类型　/　拍照识别</div><div class="shot shot-compare" role="img" aria-label="图片占位：3.0 冰箱切换模块"><span class="shot-label">图片占位</span><span class="shot-name">3.0 型号切换行动卡</span></div></div>
+            </div>
+            <p class="fix-value"><b>优化价值</b>　功能发现率显著提升，核心价值被用户感知到。</p>
+          </article>
+
+          <article class="fix-card reveal">
+            <div class="fix-head"><span class="fix-no">03</span><div><h3>临期预警分级可视化</h3><p>别让用户自己数、自己算</p></div><span class="fix-principle">格式塔分组 + 认知负荷</span></div>
+            <div class="fix-chain"><span>用户原声</span><b>“看到 8 件快到期，但不知道到底有多急”</b><span>问题诊断</span><b>信息平铺无优先级，认知负担重</b><span>原则支撑</span><b>分组 + 精简</b></div>
+            <div class="compare">
+              <div class="compare-side before"><small>2.0 · 改前</small><div class="mock-label muted-label">快到期食材列表 · 8 件</div><div class="shot shot-compare" role="img" aria-label="图片占位：2.0 纯列表"><span class="shot-label">图片占位</span><span class="shot-name">2.0 临期纯列表</span></div></div>
+              <div class="compare-arrow" aria-hidden="true">→</div>
+              <div class="compare-side after"><small>3.0 · 改后</small><div class="tier-row"><em>已过期</em><em>1天内</em><em>2天内</em><em>3天内</em></div><div class="shot shot-compare" role="img" aria-label="图片占位：3.0 分级列表"><span class="shot-label">图片占位</span><span class="shot-name">3.0 分级列表</span></div></div>
+            </div>
+            <p class="fix-value"><b>优化价值</b>　1 秒识别最高风险，决策效率直接翻倍。</p>
+          </article>
+
+          <article class="fix-card reveal">
+            <div class="fix-head"><span class="fix-no">04</span><div><h3>顶部信息轻量化</h3><p>3 秒抓住核心数字</p></div><span class="fix-principle">认知负荷 · 简洁设计</span></div>
+            <div class="fix-chain"><span>用户原声</span><b>“打开先看一堆文字，半天抓不住核心”</b><span>问题诊断</span><b>信息冗余，核心数据被文字包裹</b><span>原则支撑</span><b>信息精简</b></div>
+            <div class="compare">
+              <div class="compare-side before"><small>2.0 · 改前</small><div class="mock-label muted-label">19 件食材 · 8 件快到期</div><div class="shot shot-compare" role="img" aria-label="图片占位：2.0 顶部信息"><span class="shot-label">图片占位</span><span class="shot-name">2.0 顶部信息</span></div></div>
+              <div class="compare-arrow" aria-hidden="true">→</div>
+              <div class="compare-side after"><small>3.0 · 改后</small><div class="mock-label good">19 件 · 8 临期</div><div class="shot shot-compare" role="img" aria-label="图片占位：3.0 顶部信息"><span class="shot-label">图片占位</span><span class="shot-name">3.0 顶部信息</span></div></div>
+            </div>
+            <p class="fix-value"><b>优化价值</b>　3 秒抓核心，适配碎片化快速浏览。</p>
+          </article>
+
+          <article class="fix-card reveal">
+            <div class="fix-head"><span class="fix-no">05</span><div><h3>临期提醒动作指令化</h3><p>从「提醒你」变成「告诉你怎么做」</p></div><span class="fix-principle">系统状态可见 + 行动导向</span></div>
+            <div class="fix-chain"><span>用户原声</span><b>“知道快过期，但还是想不起来先吃哪个”</b><span>问题诊断</span><b>只告知状态，无法转化为实际行为</b><span>原则支撑</span><b>行动导向</b></div>
+            <div class="compare">
+              <div class="compare-side before"><small>2.0 · 改前</small><div class="mock-label muted-label">原味酸奶 · 还剩 1 天</div><div class="shot shot-compare" role="img" aria-label="图片占位：2.0 食材条目"><span class="shot-label">图片占位</span><span class="shot-name">2.0 食材条目</span></div></div>
+              <div class="compare-arrow" aria-hidden="true">→</div>
+              <div class="compare-side after"><small>3.0 · 改后</small><div class="mock-label good">原味酸奶 · 还剩 1 天 <em class="priority-pill">⏰ 优先吃</em></div><div class="shot shot-compare" role="img" aria-label="图片占位：3.0 食材条目"><span class="shot-label">图片占位</span><span class="shot-name">3.0 食材条目</span></div></div>
+            </div>
+            <p class="fix-value"><b>优化价值</b>　真正减少浪费：不是多一条提醒，而是多一个明确动作。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3.0 体验补全 -->
+    <section class="section experience" id="experience">
+      <div class="section-head reveal">
+        <p class="eyebrow">MODULE 04 / 不只是五处改字</p>
+        <h2>3.0 还补上了「完整体验」</h2>
+        <p class="section-lead">五处优化是看得见的刀口；看不见的，是新用户从打开到上手的整条路径。</p>
+      </div>
+      <div class="experience-grid">
+        <article class="exp-card reveal"><span class="exp-icon">▷</span><h3>品牌开场动画</h3><p>冰箱门打开，食材浮现：「鲜知 · 管好冰箱，减少浪费」。</p></article>
+        <article class="exp-card reveal reveal-delay"><span class="exp-icon">🧭</span><h3>8 步实操教程</h3><p>欢迎 → 添加食材 → 看临期 → 按位置找 → 匹配冰箱 → 看食谱 → 加补货 → 探索完成。</p></article>
+        <article class="exp-card reveal reveal-delay-2"><span class="exp-icon">⏰</span><h3>每日临期提醒</h3><p>不再等用户想起来；每天主动列出最该先吃的 3 样食材。</p></article>
+        <article class="exp-card reveal"><span class="exp-icon">▦</span><h3>首页模块切换</h3><p>「⏰ 临期 / 🧊 分区」两个模块，把首页从信息流改成选择台。</p></article>
+        <article class="exp-card reveal reveal-delay"><span class="exp-icon">✓</span><h3>入库即时反馈</h3><p>添加后提示「已放入 XX」并给出「查看」入口，操作结果看得见。</p></article>
+        <article class="exp-card reveal reveal-delay-2"><span class="exp-icon">▶</span><h3>食谱视频教程</h3><p>菜谱详情附视频卡片，点击前往哔哩哔哩观看完整做法。</p></article>
+      </div>
+      <div class="shot shot-wide experience-shot reveal" role="img" aria-label="图片占位：3.0 新手教程与每日提醒流程截图">
+        <span class="shot-label">图片占位</span>
+        <span class="shot-name">3.0 教程步骤 / 每日提醒 / 模块切换流程图</span>
+      </div>
+    </section>
+
+    <!-- 思考沉淀 -->
+    <section class="section principles-wrap" id="method">
+      <div class="section-head reveal">
+        <p class="eyebrow">MODULE 05 / 思考沉淀</p>
+        <h2>从界面修改，提炼成通用判断标准</h2>
+        <p class="section-lead">能复用的不是某个按钮样式，而是做判断的方式。</p>
+      </div>
+      <div class="principle-grid">
+        <article class="principle-card reveal"><span> Principle 01 </span><h3>用户语言原则</h3><p>不用团队内部黑话，只用用户日常会说的话做表达。</p><div class="principle-glyph" aria-hidden="true">“ ”</div></article>
+        <article class="principle-card reveal reveal-delay"><span> Principle 02 </span><h3>最小思考原则</h3><p>能让用户一眼看懂的，绝不让用户动脑猜、动手试。</p><div class="principle-glyph" aria-hidden="true">1→</div></article>
+        <article class="principle-card reveal reveal-delay-2"><span> Principle 03 </span><h3>行动导向原则</h3><p>所有信息最终都要指向行动，不然只是无效的视觉噪音。</p><div class="principle-glyph" aria-hidden="true">↗</div></article>
+      </div>
+      <div class="shot shot-strip reveal" role="img" aria-label="图片占位：三个设计原则的简约视觉符号">
+        <span class="shot-label">图片占位</span>
+        <span class="shot-name">三个原则对应简约视觉符号</span>
+      </div>
+    </section>
+
+    <!-- 后续延伸 -->
+    <section class="section future" id="future">
+      <div class="future-inner reveal">
+        <div class="future-copy">
+          <p class="eyebrow eyebrow-light">MODULE 06 / 后续延伸</p>
+          <h2>3.0 不是终点，<br />是下一轮提问的开始。</h2>
+          <p class="chapter-lead">设计是持续迭代的过程。下一轮，我们继续用真实用户测试验证每一处修改，用反馈驱动版本前进。</p>
+          <div class="future-method"><span>核心迭代方法</span><b>真实用户测试 → 反馈归因 → 方案验证 → 下一轮迭代</b></div>
+        </div>
+        <div class="future-list">
+          <article><span>01</span><div><h3>强化添加食材入口</h3><p>继续提升视觉权重，彻底解决「找不到录入入口」的核心痛点。</p></div></article>
+          <article><span>02</span><div><h3>新增系统消息推送</h3><p>实现「不用打开工具也能收到临期通知」。</p></div></article>
+          <article><span>03</span><div><h3>补充食谱推荐</h3><p>给临期食材更具体的消耗方案，让提醒真正连到行动。</p></div></article>
+        </div>
+      </div>
+      <div class="shot shot-wide future-shot reveal" role="img" aria-label="图片占位：后续版本原型草图">
+        <span class="shot-label">图片占位</span>
+        <span class="shot-name">后续版本原型草图 / 功能规划示意图</span>
+      </div>
+    </section>
+
+    <!-- 尾声 -->
+    <section class="ending">
+      <div class="ending-inner reveal">
+        <p class="eyebrow">THE END / ALSO THE BEGINNING</p>
+        <h2>好的迭代，不是把界面换得更漂亮，<br />而是把用户的话，<span class="underline">翻译成界面能回答的问题。</span></h2>
+        <div class="ending-links">
+          <a href="https://tartalr818339.github.io/fridge/" target="_blank" rel="noopener"><b>1.0</b><span>功能上线 ↗</span></a>
+          <a href="https://tartalr818339.github.io/fridge2.0/" target="_blank" rel="noopener"><b>2.0</b><span>结构重整 ↗</span></a>
+          <a href="https://tartalr818339.github.io/fridge3.0/" target="_blank" rel="noopener"><b>3.0</b><span>行动引导 ↗</span></a>
+        </div>
+        <a class="back-top" href="#top">↑ 回到故事开头</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>鲜知 FreshSense · 迭代设计全链路展示</span>
+    <span>图片位置均为预留占位框，等待替换为真实项目素材</span>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
