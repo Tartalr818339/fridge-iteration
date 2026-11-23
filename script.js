@@ -118,6 +118,45 @@
   });
   renderLab('v1');
 
+  var lightbox = document.getElementById('researchLightbox');
+  var lightboxImage = document.getElementById('lightboxImage');
+  var lightboxCaption = document.getElementById('lightboxCaption');
+  var lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+  var lastArtifactTrigger = null;
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    if (lastArtifactTrigger) lastArtifactTrigger.focus();
+    lastArtifactTrigger = null;
+  }
+
+  Array.prototype.slice.call(document.querySelectorAll('.artifact-btn')).forEach(function (button) {
+    button.addEventListener('click', function () {
+      if (!lightbox) return;
+      var image = button.querySelector('img');
+      if (!image) return;
+      lastArtifactTrigger = button;
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      lightboxCaption.textContent = button.dataset.caption || image.alt;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      if (lightboxClose) lightboxClose.focus();
+    });
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) closeLightbox();
+    });
+  }
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && lightbox && lightbox.classList.contains('open')) closeLightbox();
+  });
+
   var progressBar = document.getElementById('progressBar');
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.site-nav a'));
   var ticking = false;
@@ -149,7 +188,7 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealItems.forEach(function (item) { revealObserver.observe(item); });
 
-    var sectionIds = ['prologue', 'v1', 'v2', 'research', 'v3', 'future'];
+    var sectionIds = ['prologue', 'pre-research', 'v1', 'v2', 'research', 'v3', 'future'];
     var sectionObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
