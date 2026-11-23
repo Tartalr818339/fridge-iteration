@@ -132,7 +132,7 @@
     lastArtifactTrigger = null;
   }
 
-  Array.prototype.slice.call(document.querySelectorAll('.artifact-btn')).forEach(function (button) {
+  Array.prototype.slice.call(document.querySelectorAll('.artifact-btn, .cover-shot')).forEach(function (button) {
     button.addEventListener('click', function () {
       if (!lightbox) return;
       var image = button.querySelector('img');
